@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TP1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="lib.js"></script>
+  </head>
+  <body ng-app="AnnuaireModule">
+    <header></header>
+    <div class="main">
+      <div ng-controller="AnnuaireController">
+        <form ng-submit="add()">
+          <div class="form-group">
+            <label>First name: </label>
+            <input class="form-control" type="text" ng-model="firstname" required /><br />
+          </div>
+          <div class="form-group">
+            <label>Last name: </label>
+            <input class="form-control" type="text" ng-model="lastname" required /><br />
+          </div>
+          <div class="radio">
+            Gender:
+            <label><input type="radio" ng-model="gender" value="M" ng-required="!gender" />Men</label>
+            <label><input type="radio" ng-model="gender" value="F" ng-required="!gender" />Women</label><br />
+          </div>
+          <br/>
+          <input class="btn btn-primary" type="submit" value="Send Data" />
+        </form>
+        <p class="{{successClass}}">{{success}}</p>
+        <div class="panel panel-default">
+          <div class="panel-heading">Panel heading</div>
+          <div class="panel-body">
+            <p>
+              Voici la liste des personnes inscrits dans notre annuaire.
+              A l'aide du formulaire ci-dessus, vous pouvez ajouter un personne en insérant les informations demandées.
+            </p>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="user in master">
+                <th>{{user.key}}</th>
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.gender}}</td>
+                <td><a ng-click="delete(user.key)"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
