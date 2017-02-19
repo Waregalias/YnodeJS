@@ -1,9 +1,9 @@
 'use strict';
-const express       = require('express');
-const app           = express();
-const http          = require('http').Server(app);
-const path          = require('path');
-const router        = express.Router();
+const express = require('express');
+const app     = express();
+const http    = require('http').Server(app);
+const path    = require('path');
+const router  = express.Router();
 
 let port = 3000;
 

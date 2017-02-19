@@ -6,10 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/Waregalias/YnodeJS.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Waregalias/YnodeJS.git"
   },
   "author": "said mezhoud",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "body-parser": "^1.16.1",
+    "express": "^4.10.2",
+    "socket.io": "^1.7.3"
+  }
 }

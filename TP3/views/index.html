@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TP3 - Chat Online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  </head>
+  <body ng-app="ChatModule">
+    <ul class="list-unstyled" id="messages" ng-model="response">
+      <li ng-repeat="message in response">{{message}}</li>
+    </ul>
+    <div ng-controller="ChatController">
+      <form ng-submit="send()">
+        <input ng-model="user" autocomplete="off" required/>
+        <input ng-model="message" autocomplete="off" required/>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script src="lib.js"></script>
+  </body>
+</html>
