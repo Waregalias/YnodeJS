@@ -1,0 +1,15 @@
+{
+  "name": "chat",
+  "version": "0.1.0",
+  "description": "tp3 school project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/Waregalias/YnodeJS.git"
+  },
+  "author": "said mezhoud",
+  "license": "ISC"
+}
